@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiNewsApp.Views.ScannerPage"
+             Title="ScannerPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls">
+    <Grid>
+        <zxing:CameraBarcodeReaderView
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            x:Name="barcodeView"
+	        x:FieldModifier="public"
+            BarcodesDetected="BarcodesDetected" />
+            <Label Grid.Row="0"
+                Text="Scan Barcode..."
+                x:Name="lb1"
+                TextColor="White"
+                FontSize="Subtitle"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            <Label Grid.Row="0"
+                Text=""
+                x:Name="lbl2"
+                TextColor="Green"
+                FontSize="Subtitle"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            <Button
+                Clicked="OnFlashBtnClicked"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+            <Button.ImageSource>
+                <FontImageSource
+                x:Name="flashBtnImg"
+                FontFamily="MaterialIconsOutlined-Regular"
+                Glyph="&#xf00b;"/>
+            </Button.ImageSource>
+        </Button>
+    </Grid>
+</ContentPage>

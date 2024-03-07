@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiNewsApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiNewsApp"
+    xmlns:view="clr-namespace:MauiNewsApp.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="NewsApp"
+    Shell.BackgroundColor="#4f2f5e"
+    Shell.TitleColor="White">
+
+    <TabBar>
+        <Tab Title="News">
+            <ShellContent 
+                Title="News"
+                ContentTemplate="{DataTemplate view:MainPage}"
+                Route="MainPage"/>
+            <Tab.Icon>
+                <FontImageSource
+                FontFamily="MaterialIconsOutlined-Regular"
+                Glyph="&#xeb81;"/>
+            </Tab.Icon>
+        </Tab>
+        <Tab Title="Lottie Animation">
+            <ShellContent 
+                Title="Lottie Files"
+                ContentTemplate="{DataTemplate view:LottiePage}"
+                Route="LottiePage" />
+            <Tab.Icon>
+                <FontImageSource
+                FontFamily="MaterialIconsOutlined-Regular"
+                Glyph="&#xe71c;"/>
+            </Tab.Icon>
+        </Tab>
+        <Tab Title="Scan Qr">
+            <ShellContent 
+                Title="Scan Qr"
+                ContentTemplate="{DataTemplate view:ScannerPage}"
+                Route="ScannerPage" />
+            <Tab.Icon>
+                <FontImageSource
+                FontFamily="MaterialIconsOutlined-Regular"
+                Glyph="&#xf206;"/>
+            </Tab.Icon>
+        </Tab>
+    </TabBar>
+
+    <ShellContent
+        Title="News App"
+        ContentTemplate="{DataTemplate view:MainPage}"
+        Route="MainPage" />
+
+    <Shell.ToolbarItems>
+        <ToolbarItem x:Name="home">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                FontFamily="MaterialIconsOutlined-Regular"
+                Glyph="&#xe88a;"
+                Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </Shell.ToolbarItems>
+
+</Shell>
